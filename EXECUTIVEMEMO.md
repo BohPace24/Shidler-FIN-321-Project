@@ -29,7 +29,9 @@ A key limitation is the reliance on the available forward quote (1.0935) and the
 ---
 
 ## References
-“EUR/USD (EURUSD=x) Live Rate, Chart & News.” Yahoo! Finance, Yahoo!, 22 Oct. 2025, https://finance.yahoo.com/quote/EURUSD=X/. Accessed 20 Oct. 2025
+“EUR/USD (EURUSD=x) Live Rate, Chart & News.” Yahoo! Finance, Yahoo!, 22 Oct. 2025, https://finance.yahoo.com/quote/EURUSD=X/. Accessed 20 Oct. 2025.
+
 “Effective Federal Funds Rate.” Effective Federal Funds Rate - FEDERAL RESERVE BANK of NEW YORK, www.newyorkfed.org/markets/reference-rates/effr. Accessed 21 Oct. 2025.
+
 “Euro Area Interest Rate.” Trading Economics, https://tradingeconomics.com/euro-area/interest-rate. Accessed 20 Oct. 2025. 
 
