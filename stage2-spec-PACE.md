@@ -1,8 +1,11 @@
 # Scenario 4: U.S. Aerospace Manufacturer Technical Specification
 
 **Created by:** Bohden Pace
+
 **Updated by:** Bohden Pace  
+
 **Date Created:** 11/04/2025   
+
 **Version:** 1.0
 
 **Role:** Financial Analyst 
