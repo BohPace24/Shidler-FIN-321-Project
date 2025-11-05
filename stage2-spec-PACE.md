@@ -23,22 +23,20 @@ Our company, a U.S. Aerospace Manufacturer, expects to receive €20,000,000 in 
 
 ## 2. Inputs (Known Variables)
 
-Create a clean, professional input table. This will become the foundation for your spreadsheet and future AI prompts.
 
 | Variable | Description | Unit | Example | Source |
 |-----------|-------------|------|----------|--------|
-| `FC_AMT` | Foreign-currency receivable | EUR | 1,200,000 | Company data |
-| `S₀` | Current EURUSD spot rate | USD/EUR | [Look up] | Market data |
-| `F₀` | 1-year EURUSD forward rate | USD/EUR | 1.0890 | Provided |
-| `r_USD` | USD 1-year interest rate | % | [Look up] | Market data |
-| `r_EUR` | EUR 1-year interest rate | % | [Look up] | Market data |
+| `FC_AMT` | Foreign-currency receivable | EUR | 20,000,000 | Company data |
+| `S₀` | Current EURUSD spot rate | USD/EUR | 1.0941 | Market data |
+| `F₀` | 1-year EURUSD forward rate | USD/EUR | 1.0935 | Provided |
+| `r_USD` | USD 1-year interest rate | % | 4.11 | Market data |
+| `r_EUR` | EUR 1-year interest rate | % | 2.15 | Market data |
 | `t` | Time to maturity | Years | 1 | Derived |
-| `K_put` | EUR Put strike | USD/EUR | [Set at spot] | Analyst choice |
-| `K_call` | EUR Call strike | USD/EUR | [Set at spot] | Analyst choice |
-| `Premium_put` | Put premium | USD per contract | 0.017 | Scenario |
-| `Premium_call` | Call premium | USD per contract | 0.022 | Scenario |
+| `K_put` | EUR Put strike | USD/EUR | 1.1606 | Analyst choice |
+| `K_call` | EUR Call strike | USD/EUR | 1.1606 | Analyst choice |
+| `Premium_put` | Put premium | USD per contract | 0.019 | Scenario 4 |
+| `Premium_call` | Call premium | USD per contract | 0.024 | Scenario 4 |
 
-> *Tip:* Keep labels short and standardized. Think like a financial modeler — these names should become variable names, spreadsheet inputs, or prompt parameters later.
 
 ---
 
@@ -84,18 +82,18 @@ Create a clean, professional input table. This will become the foundation for yo
 
 ## 5. Outputs
 
-List expected results from the model. These become your **spreadsheet outputs**, **AI prompt targets**, and **Stage 5 discussion points**.
 
 | Output | Description | Format | Purpose |
 |---------|--------------|---------|----------|
-| `USD_forward` | USD proceeds from forward hedge | Numeric | Certainty benchmark |
-| `USD_mm` | USD proceeds from money market hedge | Numeric | Cross-check against forward |
-| `USD_put` | USD proceeds from EUR put hedge | Table | Sensitivity & protection |
-| `USD_call` | USD proceeds from EUR call hedge | Table | Optional upside case |
-| `Chart_1` | Hedge outcomes vs. S_T | Line chart | Visual comparison |
-| `Summary` | Written conclusion | 1–2 paragraphs | Executive-ready takeaway |
+| `USD_forward` | USD proceeds from forward hedge at t = 1 | Numeric | Certainty benchmark & target |
+| `USD_mm` | USD proceeds from money market hedge at t = 1 | Numeric | Cross-check against forward |
+| `$F_{IRP}$` | Implied forward rate from interest rate parity | Numeric | Model validation & rate comparison |
+| `$NPV_{hedges}$` | Net Present Value of $USD_{forward}$ and $USD_{MM}$ | Numeric | True cost/benefit comparison |
+| `USD_put` | USD proceeds from EUR put hedge vs. $S_T$ | Table | Sensitivity & protection |
+| `USD_call` | USD proceeds from EUR call hedge vs. $S_T$ | Table | Optional upside case |
+| `Chart_1` | Hedge outcomes vs. $S_T$ | Line chart | Visual comparison of risk vs. reward profiles |
+| `Summary` | Written conclusion | 1–2 paragraphs | Executive-ready takeaway focused on certainty, cost, and optionality |
 
-> *Outputs should read like a professional financial dashboard — clear, repeatable, and decision-focused.*
 
 ---
 
@@ -112,6 +110,7 @@ To test the robustness of each strategy and visualize the risk profiles, we will
 ## 7. Limitations & Next Steps
 
 7. Limitations & Next Steps
-   This specification lays the analytical groundwork but does not incorporate implied volatility (only using observed market rates for $S_0$, $F_0$, and $K$), transaction costs, liquidity risk, or credit risk. The options analysis assumes a single strike for simplification, and the money market hedge assumes perfect access to the stated interbank interest rates. The immediate next step is to construct an Excel model (Stage 3) that implements the Calculation Flow (Section 4) and Sensitivity Plan (Section 6) to quantify the final USD proceeds and NPV for each hedge structure.
+
+This specification lays the analytical groundwork but does not incorporate implied volatility (only using observed market rates for $S_0$, $F_0$, and $K$), transaction costs, liquidity risk, or credit risk. The options analysis assumes a single strike for simplification, and the money market hedge assumes perfect access to the stated interbank interest rates. The immediate next step is to construct an Excel model (Stage 3) that implements the Calculation Flow (Section 4) and Sensitivity Plan (Section 6) to quantify the final USD proceeds and NPV for each hedge structure.
 
 ---
