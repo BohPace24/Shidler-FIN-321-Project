@@ -1,4 +1,4 @@
-# Stage 4 – Spec and Generated Spreadshett
+# Stage 4 – Spec and Generated Spreadsheet
 # Bohden Pace
 **Scenario:** 4
 
